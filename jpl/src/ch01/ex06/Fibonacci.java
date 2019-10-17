@@ -1,3 +1,5 @@
+package ch01.ex06;
+
 public class Fibonacci {
     private static final String TITLE = "Fibonacci Number";
     public static void main(String args[]) {

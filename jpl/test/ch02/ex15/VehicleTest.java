@@ -1,3 +1,5 @@
+package ch02.ex15;
+
 import org.junit.Test;
 
 import java.lang.reflect.Field;

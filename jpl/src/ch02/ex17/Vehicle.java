@@ -1,3 +1,5 @@
+package ch02.ex17;
+
 public class Vehicle {
     private int speed;
     private int direction;

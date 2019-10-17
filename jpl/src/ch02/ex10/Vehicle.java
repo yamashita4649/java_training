@@ -1,3 +1,5 @@
+package ch02.ex10;
+
 public class Vehicle {
     public int speed;
     public int direction;
