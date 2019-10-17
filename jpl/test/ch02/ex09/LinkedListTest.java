@@ -1,3 +1,5 @@
+package ch02.ex09;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,3 +1,5 @@
+package ch02.ex05;
+
 public class LinkedList {
     public Object value;
     public LinkedList nextLinkedList;

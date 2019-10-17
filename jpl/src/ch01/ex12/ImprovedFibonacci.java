@@ -1,3 +1,5 @@
+package ch01.ex12;
+
 public class ImprovedFibonacci {
     static final int MAX_INDEX = 9;
     public static void main(String args[]){

@@ -1,3 +1,4 @@
+package ch01.ex03;
 public class Fibonacci {
     public static void main(String args[]){
         int lo = 1;

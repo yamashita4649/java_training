@@ -1,3 +1,5 @@
+package ch02.ex14;
+
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -87,21 +89,6 @@ public class VehicleTest {
         Vehicle byke= new Vehicle("takahashi");
         assertEquals(0,car.getIdNumber());
         assertEquals(1,byke.getIdNumber());
-    }
-
-    @Test
-    public void getMaxId() {
-        Vehicle car = new Vehicle("satoh");
-        car.dispStatus();
-
-        Vehicle byke= new Vehicle("takahashi");
-        byke.dispStatus();
-
-        assertEquals("satoh",car.getOwnerName());
-        assertEquals(0,car.getIdNumber());
-        assertEquals("takahashi",byke.getOwnerName());
-        assertEquals(1,byke.getIdNumber());
-        assertEquals(1,Vehicle.getMaxId());
     }
 
     @Test
