@@ -9,7 +9,7 @@ import java.awt.event.WindowEvent;
  * */
 public class MainWindow extends Frame implements ActionListener {
 
-    String mDateString = "";
+    String mDateString = "YYYY/mm/dd hh:mm:ss";
     ClockCanvas mClockCanvas;
     Clock mClock;
     Frame mMayFrame;
@@ -38,9 +38,9 @@ public class MainWindow extends Frame implements ActionListener {
 
     public MainWindow() {
         mMayFrame = new Frame();
-        mMayFrame.setSize(300, 200);
+        resizeFrame();
         mMayFrame.addWindowListener(new MyWindowAdapter());
-        mMayFrame.setVisible(true);
+
 
         MenuBar menuBar = new MenuBar();
         Menu menuFile = new Menu("File");
@@ -53,6 +53,7 @@ public class MainWindow extends Frame implements ActionListener {
         mMayFrame.add(mClockCanvas);
         mClock = new Clock();
         mClock.init(this);
+        mMayFrame.setVisible(true);
     }
 
     public void setBackColor(Color backColor) {
@@ -76,9 +77,7 @@ public class MainWindow extends Frame implements ActionListener {
         int width = getFontMetrics(new Font(mFontName,Font.BOLD,mFontSize)).stringWidth(mDateString);
         int hight = getFontMetrics(new Font(mFontName,Font.BOLD,mFontSize)).getHeight();
         mMayFrame.setSize(width+50,hight*3);
-        System.out.printf("%d  ",width);
     }
-
     public void startDrawClock() {
         mClock.start();
     }
@@ -111,8 +110,11 @@ public class MainWindow extends Frame implements ActionListener {
             buffer.setFont(new Font(mFontName,Font.BOLD,mFontSize));
             buffer.setColor(mStringColor);
             int hight = buffer.getFontMetrics().getHeight();
-            buffer.drawString(mDateString, 0,hight);
+            int drawHight =((mMayFrame.getHeight()-hight-34)/2+10);
+            buffer.drawString(mDateString, 0,drawHight);
+            System.out.printf("%d:",hight);
             g.drawImage(back, 0, 0, this);
+
         }
     }
 
