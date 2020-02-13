@@ -166,6 +166,14 @@ public class MainWindow extends Frame implements ActionListener {
         layout.setConstraints(l2,c);
         mMayFrame.add(l2);
 
+        c.gridy =13;
+
+        Button bootButton = new Button("bootMe");
+        bootButton.addActionListener(this);
+        bootButton.setActionCommand("bootME");
+        layout.setConstraints(bootButton,c);
+        mMayFrame.add(bootButton);
+
         b1 = new TextArea("Hello World!!", 5, 50);
         layout.setConstraints(b1,c);
         mMayFrame.add(b1);
@@ -228,6 +236,21 @@ public class MainWindow extends Frame implements ActionListener {
         } else if("setSixe".equals(cmd)) {
             mMayFrame.setSize(Integer.valueOf(sizeXTxt.getText()),Integer.valueOf(sizeYTxt.getText()));
             mMayFrame.repaint();
+        } else if("bootME".equals(cmd)) {
+            Method mainMethod = null;
+            System.out.println("bootME");
+            try {
+                mainMethod = Main.class.getMethod("main", String[].class);
+                String[] args = {"arg1", "arg2", "arg3"};
+                mainMethod.invoke(null, (Object) args);
+            } catch (NoSuchMethodException ex) {
+                ex.printStackTrace();
+            } catch (IllegalAccessException ex) {
+                ex.printStackTrace();
+            } catch (InvocationTargetException ex) {
+                ex.printStackTrace();
+            }
+
         }
     }
 
