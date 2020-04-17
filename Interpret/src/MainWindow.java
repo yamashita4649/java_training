@@ -187,15 +187,9 @@ public class MainWindow extends Frame implements ActionListener {
             String clsName = fd.getText();
             try {
                 createClass = Class.forName(clsName);
-                classObj = createClass.newInstance();
                 b1.setText("create:"+ clsName);
+                new ObjectWindow(createClass);
             } catch (ClassNotFoundException ex) {
-                displayException(ex);
-                ex.printStackTrace();
-            } catch (IllegalAccessException ex) {
-                displayException(ex);
-                ex.printStackTrace();
-            } catch (InstantiationException ex) {
                 displayException(ex);
                 ex.printStackTrace();
             }
